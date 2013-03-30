@@ -1,7 +1,20 @@
 doctype 5
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name='description', content='an open repository for computer sciences and cyber culture related materials: coding, reverse engineering, computer security,...')
+    meta(name='keywords', content='programming, windows, linux, coding, c, c++, assembly, music, cyber culture')
+    meta(charset='UTF-8')
+    title= 'Index of ' + title + ''
+    link(rel='stylesheet', href='/style.css')
   body
+    div(align='right')
+      img(src='/images/banner.jpg')
     block content
+  footer
+    pre
+      div(align='right')
+        strong voidNULL
+        = '(beta) is powered by '
+        a(href='http://www.nginx.org/') nginx
+        = '/'
+        a(href='http://www.nodejs.org/') node.js
