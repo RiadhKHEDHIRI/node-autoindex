@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	h1= 'Index of ' + path
+	p= '&nbsp;'
+	pre
+		img(src='#{header.icon}', alt='#{header.alt}', title='#{header.alt}')
+		= ' '
+		a(href='?N=#{header.NameURL}')= header.Name
+		= header.NameIndent
+		a(href='?M=#{header.LastModifiedURL}')= header.LastModified
+		= header.LastModifiedIndent
+		a(href='?S=#{header.SizeURL}')= header.Size
+		= header.SizeIndent
+		a(href='?D=#{header.DescriptionURL}')= header.Description
+		= header.DescriptionIndent
+		hr
+		- for entry in entries
+			img(src='#{entry.icon}', alt='#{entry.alt}', title='#{entry.alt}')
+			= ' '
+			a(href='#{entry.url}')= entry.name
+			= entry.indent
+			= entry.mtime
+			= '  '   
+			= entry.size
+			= '  '   
+			!= entry.description + '\n'
+		= '\n'
+		hr
